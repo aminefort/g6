@@ -54,10 +54,12 @@ const GetGroups = () => {
                         <p>{{ locale('home', 'group_job_description') }}</p>
                     </div>
                 </div>
-                <Button class="action-button" @click="CreateJob()">
-                    <i class="pi pi-play"></i>
-                    <span>{{ locale('home', 'start_job') }}</span>
-                </Button>
+                <div class="card-actions">
+                    <Button class="action-button" @click="CreateJob()">
+                        <i class="pi pi-play"></i>
+                        <span>{{ locale('home', 'start_job') }}</span>
+                    </Button>
+                </div>
             </div>
 
             <div class="action-card">
@@ -70,10 +72,12 @@ const GetGroups = () => {
                         <p>{{ locale('home', 'groups_description') }}</p>
                     </div>
                 </div>
-                <Button class="action-button secondary" @click="GetGroups()">
-                    <i class="pi pi-search"></i>
-                    <span>{{ locale('home', 'join_group') }}</span>
-                </Button>
+                <div class="card-actions">
+                    <Button class="action-button secondary" @click="GetGroups()">
+                        <i class="pi pi-search"></i>
+                        <span>{{ locale('home', 'join_group') }}</span>
+                    </Button>
+                </div>
             </div>
         </div>
 
@@ -132,15 +136,18 @@ const GetGroups = () => {
             flex-direction: column;
             gap: 2vh;
             backdrop-filter: blur(10px);
+            height: calc(50% - 1vh);
 
             .card-header {
                 display: flex;
-                flex-direction: column;
                 gap: 1.5vh;
+                align-items: flex-start;
+                flex: 1;
 
                 .header-icon {
                     width: 4.5vh;
                     height: 4.5vh;
+                    min-width: 4.5vh;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -156,6 +163,8 @@ const GetGroups = () => {
                 }
 
                 .header-content {
+                    flex: 1;
+                    
                     h3 {
                         margin: 0;
                         font-size: 1.6vh;
@@ -171,37 +180,40 @@ const GetGroups = () => {
                 }
             }
 
-            .action-button {
-                height: 4vh;
-                border: none;
-                border-radius: 8px;
-                font-weight: 600;
-                font-size: 1.3vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 1vh;
-                transition: all 0.3s ease;
-                background: #00D1F5;
-                color: white;
-
-                &:hover {
-                    background: darken(#00D1F5, 5%);
-                    transform: translateY(-2px);
-                }
-
-                &.secondary {
-                    background: rgba(0, 209, 245, 0.1);
-                    border: 1px solid rgba(0, 209, 245, 0.2);
-                    color: #00D1F5;
+            .card-actions {
+                .action-button {
+                    width: 100%;
+                    height: 4vh;
+                    border: none;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    font-size: 1.3vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1vh;
+                    transition: all 0.3s ease;
+                    background: #00D1F5;
+                    color: white;
 
                     &:hover {
-                        background: rgba(0, 209, 245, 0.15);
+                        background: darken(#00D1F5, 5%);
+                        transform: translateY(-2px);
                     }
-                }
 
-                i {
-                    font-size: 1.4vh;
+                    &.secondary {
+                        background: rgba(0, 209, 245, 0.1);
+                        border: 1px solid rgba(0, 209, 245, 0.2);
+                        color: #00D1F5;
+
+                        &:hover {
+                            background: rgba(0, 209, 245, 0.15);
+                        }
+                    }
+
+                    i {
+                        font-size: 1.4vh;
+                    }
                 }
             }
         }
@@ -262,6 +274,7 @@ const GetGroups = () => {
             gap: 2vh;
             padding: 1vh;
             overflow-y: auto;
+            flex: 1;
 
             &::-webkit-scrollbar {
                 width: 4px;
@@ -284,6 +297,7 @@ const GetGroups = () => {
                 border: 1px solid rgba(0, 209, 245, 0.1);
                 border-radius: 8px;
                 transition: all 0.3s ease;
+                height: fit-content;
 
                 &:hover {
                     background: rgba(0, 209, 245, 0.08);
@@ -294,6 +308,7 @@ const GetGroups = () => {
                 .feature-icon {
                     width: 4vh;
                     height: 4vh;
+                    min-width: 4vh;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -308,6 +323,8 @@ const GetGroups = () => {
                 }
 
                 .feature-content {
+                    flex: 1;
+                    
                     h3 {
                         margin: 0;
                         font-size: 1.4vh;
