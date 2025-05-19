@@ -55,7 +55,7 @@ const GetGroups = () => {
                     </div>
                 </div>
                 <div class="card-actions">
-                    <Button class="action-button" @click="CreateJob()">
+                    <Button class="action-button primary" @click="CreateJob()">
                         <i class="pi pi-play"></i>
                         <span>{{ locale('home', 'start_job') }}</span>
                     </Button>
@@ -193,12 +193,15 @@ const GetGroups = () => {
                     justify-content: center;
                     gap: 1vh;
                     transition: all 0.3s ease;
-                    background: #00D1F5;
-                    color: white;
 
-                    &:hover {
-                        background: darken(#00D1F5, 5%);
-                        transform: translateY(-2px);
+                    &.primary {
+                        background: #00D1F5;
+                        color: white;
+
+                        &:hover {
+                            background: darken(#00D1F5, 5%);
+                            transform: translateY(-2px);
+                        }
                     }
 
                     &.secondary {
@@ -208,6 +211,7 @@ const GetGroups = () => {
 
                         &:hover {
                             background: rgba(0, 209, 245, 0.15);
+                            transform: translateY(-2px);
                         }
                     }
 
